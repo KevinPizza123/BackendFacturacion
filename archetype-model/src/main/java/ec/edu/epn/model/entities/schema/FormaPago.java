@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author AXRL
  */
 @Entity
-@Table(name = "forma_pago")
+@Table(name = "forma_pago" , catalog = "forma_pago",schema = "facturacion")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -68,7 +68,7 @@ public class FormaPago implements Serializable {
     @Basic(optional = false)
     @Column(name = "id_usuario_fp", nullable = false)
     private int idUsuarioFp;
-    //@OneToMany(cascade = CascadeType.ALL, mappedBy = "idFormaPago", fetch = FetchType.EAGER)
-    //private List<Pagos> pagosList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idFormaPago", fetch = FetchType.EAGER)
+    private List<Pagos> pagosList;
 
 }

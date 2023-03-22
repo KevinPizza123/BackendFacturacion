@@ -22,7 +22,7 @@ import javax.persistence.TemporalType;
  */
 
 @Entity
-@Table(name = "tipo_concepto")
+@Table(name = "tipo_concepto", catalog = "tipo_concepto",schema = "facturacion")
 
 public class
 TipoConcepto implements Serializable {

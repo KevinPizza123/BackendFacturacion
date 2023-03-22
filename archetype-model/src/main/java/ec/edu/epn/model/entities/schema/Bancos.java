@@ -23,7 +23,7 @@ import javax.persistence.TemporalType;
  * @author AXRL
  */
 @Entity
-@Table(name = "bancos")
+@Table(name = "bancos", catalog = "bancos",schema = "facturacion")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -23,7 +23,7 @@ import javax.persistence.TemporalType;
  * @author AXRL
  */
 @Entity
-@Table(name = "centro_costo")
+@Table(name = "centro_costo", catalog = "centro_costo", schema = "facturacion")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

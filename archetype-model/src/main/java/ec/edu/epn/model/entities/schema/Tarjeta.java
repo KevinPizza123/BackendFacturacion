@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
@@ -11,13 +12,13 @@ import javax.persistence.*;
  *
  */
 @Entity
-@Table(name = "tarjeta")
+@Table(name = "tarjeta", catalog = "tarjeta",schema = "facturacion")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Tarjeta {
-    private static final long serialVersionUID = -4216401385168017273L;
+public class Tarjeta implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)

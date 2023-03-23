@@ -21,6 +21,7 @@ public class FormaPagoDto implements Serializable {
     private String codigoSae;
     private String descripcionFp;
     private Date fechaFp;
+    private int idUsuarioFp;
 
 
 }

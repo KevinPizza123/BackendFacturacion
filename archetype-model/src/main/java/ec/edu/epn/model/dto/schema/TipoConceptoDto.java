@@ -15,10 +15,8 @@ public class TipoConceptoDto implements Serializable {
 
     private static final long serialVersionUID = -694396375016514268L;
 
-    private Integer id_tipo_concepto;
-    private String nombre_tipo_concepto;
-    private String desc_tipo_concepto;
-    private Integer id_unidad_tc;
-    private Integer prtida_nc;
-    private Date fecha_tc;
+
+    private Date fechaTc;
+
+    private int idUsuarioTc;
 }

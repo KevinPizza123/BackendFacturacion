@@ -7,19 +7,16 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class CentroCostoDto implements Serializable {
-    private static final long serialVersionUID = -231587805402151167L;
-
-    private Integer id_centro_costo;
-    private String cod_centro_costo;
-    private String nombre_centro_costo;
-    private String desc_centro_costo;
-    private String estado_centro_costo;
-    private Date fecha_centro_costo;
-    private int id_usuario_centro_costo;
-
+    private static final long serialVersionUID = -338791682502987220L;
+    private Integer idCentroCosto;
+    private String codCentroCosto;
+    private String nombreCentroCosto;
+    private String descCentroCosto;
+    private String estadoCentroCosto;
+    private Date fechaCentroCosto;
+    private int idUsuarioCentroCosto;
 }

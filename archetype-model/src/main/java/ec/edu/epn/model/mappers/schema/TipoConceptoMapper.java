@@ -1,8 +1,8 @@
 package ec.edu.epn.model.mappers.schema;
 
-
-
 import ec.edu.epn.model.dto.schema.TipoConceptoDto;
+
+
 import ec.edu.epn.model.entities.schema.TipoConcepto;
 import ec.edu.epn.model.mappers.EntityMapper;
 import org.mapstruct.Mapper;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Set;
+
 
 @Mapper(componentModel = "spring")
 @Component
@@ -29,5 +30,4 @@ public interface TipoConceptoMapper extends EntityMapper<TipoConceptoDto, TipoCo
 
     @Override
     Set<TipoConceptoDto> toDto(Set<TipoConcepto> entityList);
-
 }

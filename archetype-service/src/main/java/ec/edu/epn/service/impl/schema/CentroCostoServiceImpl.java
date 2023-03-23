@@ -1,9 +1,10 @@
 package ec.edu.epn.service.impl.schema;
 
-import ec.edu.epn.model.dto.schema.BancosDto;
-import ec.edu.epn.model.mappers.schema.BancosMapper;
-import ec.edu.epn.repository.schema.BancosRepository;
-import ec.edu.epn.service.service.schema.BancosService;
+
+import ec.edu.epn.model.dto.schema.CentroCostoDto;
+import ec.edu.epn.model.mappers.schema.CentroCostoMapper;
+import ec.edu.epn.repository.schema.CentroCostoRepository;
+import ec.edu.epn.service.service.schema.CentroCostoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,28 +13,26 @@ import java.util.List;
 
 @Service
 @Transactional
-public class BancosServicelmpl implements BancosService {
-
+public class CentroCostoServiceImpl implements CentroCostoService {
+    @Autowired
+    private CentroCostoRepository repository;
 
     @Autowired
-    private BancosRepository repository;
-
-    @Autowired
-    private BancosMapper mapper;
+    private CentroCostoMapper mapper;
 
 
     @Override
-    public BancosDto create(BancosDto obj) {
+    public CentroCostoDto create(CentroCostoDto obj) {
         return mapper.toDto(repository.save(mapper.toEntity(obj)));
     }
 
     @Override
-    public List<BancosDto> findAll() {
+    public List<CentroCostoDto> findAll() {
         return mapper.toDto(repository.findAll());
     }
 
     @Override
-    public BancosDto findById(Integer id) {
+    public CentroCostoDto findById(Integer id) {
         return mapper.toDto(repository.findById(id).isPresent() ? repository.findById(id).get() : null);
     }
 

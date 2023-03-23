@@ -3,8 +3,6 @@ package ec.edu.epn.model.entities.schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -27,10 +25,8 @@ import javax.persistence.TemporalType;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class CentroCosto implements Serializable {
-
-    private static final long serialVersionUID = -1643822853481527411L;
+    private static final long serialVersionUID = -7058342867780866780L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -54,28 +50,3 @@ public class CentroCosto implements Serializable {
     @Column(name = "id_usuario_centro_costo", nullable = false)
     private int idUsuarioCentroCosto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

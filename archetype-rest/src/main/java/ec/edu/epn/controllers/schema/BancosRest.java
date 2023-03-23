@@ -4,7 +4,6 @@ package ec.edu.epn.controllers.schema;
 import ec.edu.epn.model.dto.schema.BancosDto;
 import ec.edu.epn.model.enums.EnumMessages;
 import ec.edu.epn.model.response.ResponseGenerico;
-// lombok.RequiredArgsConstructor;
 import ec.edu.epn.service.service.schema.BancosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,9 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("private/")
+@RequestMapping("bancos/")
 public class BancosRest {
-
 
     @Autowired
     private BancosService service;
@@ -27,7 +25,7 @@ public class BancosRest {
      *
      * @return guardar
      */
-    @PostMapping(value = "guardarBanco")
+    @PostMapping(value = "guardarBancos")
     public ResponseEntity<?> create(@RequestBody BancosDto obj) {
         BancosDto dto = service.create(obj);
         ResponseGenerico<BancosDto> response = new ResponseGenerico<>();
@@ -52,7 +50,7 @@ public class BancosRest {
      *
      * @return objeto response
      */
-    @GetMapping(value = "listarBanco")
+    @GetMapping(value = "listarBancos")
     public ResponseEntity<?> listar() {
         ResponseGenerico<BancosDto> response = new ResponseGenerico<>();
         try {
@@ -77,11 +75,11 @@ public class BancosRest {
      * @return objeto response
      */
     //@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    @GetMapping(value = "buscarPorIdBanco/{id}")
+    @GetMapping(value = "buscarPorIdBancos/{id}")
     public ResponseEntity<?> findById(@PathVariable int id) {
         ResponseGenerico<BancosDto> response = new ResponseGenerico<>();
         try {
-            BancosDto dto = service.findById(id);
+           BancosDto dto = service.findById(id);
             response.setCodigoRespuestaName(HttpStatus.OK.name());
             response.setCodigoRespuestaValue(HttpStatus.OK.value());
             response.setObjeto(dto);
@@ -95,8 +93,8 @@ public class BancosRest {
         }
     }
 
-    @DeleteMapping(value = "eliminarBanco/{id}")
-    public ResponseEntity<?> eliminarById(@PathVariable  int id) {
+    @DeleteMapping(value = "eliminarBancos/{id}")
+    public ResponseEntity<?> eliminarById(@PathVariable int id) {
         ResponseGenerico<Boolean> response = new ResponseGenerico<>();
         try {
             boolean dto = service.delete(id);

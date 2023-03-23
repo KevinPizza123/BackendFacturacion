@@ -1,8 +1,8 @@
 package ec.edu.epn.service.exceptions;
 
 public class ErrorMessage {
-    private int errorcode;
-    private String errormessage;
+    private final int errorcode;
+    private final String errormessage;
 
     public ErrorMessage(int errorcode, String errormessage) {
         this.errorcode = errorcode;

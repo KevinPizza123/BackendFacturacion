@@ -1,7 +1,7 @@
 package ec.edu.epn.controllers.schema;
 
-
 import ec.edu.epn.model.dto.schema.CentroCostoDto;
+
 import ec.edu.epn.model.enums.EnumMessages;
 import ec.edu.epn.model.response.ResponseGenerico;
 import ec.edu.epn.service.service.schema.CentroCostoService;
@@ -15,7 +15,6 @@ import java.util.List;
 @RestController
 @RequestMapping("centrocosto/")
 public class CentroCostoRest {
-
     @Autowired
     private CentroCostoService service;
 
@@ -112,23 +111,4 @@ public class CentroCostoRest {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -7,12 +7,14 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tipo_consumidor", catalog = "tipo_consumidor", schema = "facturacion")
+
 public class TipoConsumidor implements Serializable{
     private static final long serialVersionUID = 1L;
     @Id

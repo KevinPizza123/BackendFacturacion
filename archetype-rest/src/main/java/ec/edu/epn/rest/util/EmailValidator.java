@@ -12,10 +12,6 @@ public class EmailValidator {
 
 		Matcher mather = pattern.matcher(correo);
 
-		if (mather.find() == true) {
-			return true;
-		} else {
-			return false;
-		}
+        return mather.find();
 	}
 }

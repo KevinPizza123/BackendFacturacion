@@ -24,22 +24,20 @@ public class TarjetaRest {
      */
     @PostMapping(value = "gTarjeta")
     public ResponseEntity<?> create(@RequestBody TarjetaDTO obj) {
-        TarjetaDTO dto = service.create(obj);
-        ResponseGenerico<TarjetaDTO> response = new ResponseGenerico<>();
         try {
+            service.create(obj);
+            ResponseGenerico<Void> response = new ResponseGenerico<>();
             response.setCodigoRespuestaName(HttpStatus.OK.name());
             response.setCodigoRespuestaValue(HttpStatus.OK.value());
-            response.setObjeto(dto);
             response.setMensaje(EnumMessages.INGRESO_EXITOSO.getValor());
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
+            ResponseGenerico<Void> response = new ResponseGenerico<>();
             response.setCodigoRespuestaName(HttpStatus.BAD_REQUEST.name());
             response.setCodigoRespuestaValue(HttpStatus.BAD_REQUEST.value());
             response.setMensaje(EnumMessages.INGRESO_FALLIDO.name() + ":" + e.getMessage());
             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
-
-
     }
 
     /**
